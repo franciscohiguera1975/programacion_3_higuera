@@ -9,11 +9,8 @@ import FruitList           from './components/FruitList'
 import PriceTag            from './components/PriceTag'
 import StatusBadge         from './components/StatusBadge'
 import MiniProfileCard     from './components/MiniProfileCard'
-import SimpleInfoTable     from './components/SimpleInfoTable'/*
-import ProductCard         from './components/ProductCard'
-import ProductCatalogList  from './components/ProductCatalogList'
-import UserProfileCard     from './components/UserProfileCard'*/
-import VehiculosTable from './components/VehiculosTable'
+import SimpleInfoTable     from './components/SimpleInfoTable'
+
 
 // ┌──────────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.          │
@@ -31,7 +28,7 @@ import VehiculosTable from './components/VehiculosTable'
 // │  12  ProductCatalogList  — lista con renderizado condicional de items   │
 // │  13  UserProfileCard     — ejercicio: props complejas + rol             │
 // └──────────────────────────────────────────────────────────────────────────┘
-const PASO = 10
+const PASO = 6;
 
 const fruits = [
   { name: 'Manzana', emoji: '🍎', calories: 52 },
@@ -93,16 +90,7 @@ export default function App() {
           { label: 'Total',     value: '$94.99', highlight: true },
         ]}
       />
-    ) :/*
-    PASO === 11 ? <VehiculosTable
-        title="Resumen del pedido"
-        rows={[
-          { label: 'Subtotal',  value: '$89.99' },
-          { label: 'Envío',     value: '$5.00' },
-          { label: 'Total',     value: '$94.99', highlight: true },
-        ]}
-      />
-    ) :*/
+    ) :
     <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
 
   return (
