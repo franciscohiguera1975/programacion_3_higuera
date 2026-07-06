@@ -2,7 +2,11 @@
 
 import FilteredCatalog from './components/FilteredCatalog'
 import MemoizedList from './components/MemoizedList'
+import ModalDemo from './components/ModalDemo'
+import PaginatedFetch from './components/PaginatedFetch'
+import PostList from './components/PostList'
 import PrimeSieve        from './components/PrimeSieve'
+import ThemeSelector from './components/ThemeSelector'
 
 
 // ┌──────────────────────────────────────────────────────────────────────┐
@@ -12,7 +16,7 @@ import PrimeSieve        from './components/PrimeSieve'
 // │  3  OrderMetrics     — múltiples useMemo derivados de un filtro     │
 // │  4  MultiTagFilter   — filtro AND por tags con conteos memoizados   │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 5
+const PASO = 13
 
 export default function App() {
   const content =
@@ -24,8 +28,16 @@ export default function App() {
     // useCallback
     PASO === 5 ? <MemoizedList /> :/*
     PASO === 6 ? <SearchWithFetch /> :
-    PASO === 7 ? <FilterTable /> :
-    PASO === 8 ? <PaginatedFetch /> :*/
+    PASO === 7 ? <FilterTable /> :*/
+    PASO === 8 ? <PaginatedFetch /> :
+    // Hooks Personalizados
+    PASO === 9 ? <ModalDemo /> : /*
+    PASO === 10 ? <QuantitySelector /> :*/
+    PASO === 11 ? <ThemeSelector /> :/*
+    PASO === 12 ? <LiveSearch /> :*/
+    PASO === 13 ? <PostList /> :/*
+    PASO === 14 ? <ResponsiveLayout /> :
+    PASO === 15 ? <CodeBlock code={EXAMPLE_CODE} language="tsx" /> :*/
     <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
 
   return (
