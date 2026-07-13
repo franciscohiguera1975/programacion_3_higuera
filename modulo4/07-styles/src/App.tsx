@@ -1,11 +1,16 @@
 // src/App.tsx
 
 //import { ThemeProvider }    from './theme/ThemeContext'
-import CssGlobalDemo        from './components/CssGlobalDemo'
+import CssGlobalDemo from './components/CssGlobalDemo'
 import CssModuleDemo from './components/CssModuleDemo'
+import HoverDemo from './components/HoverDemo'
+import InlineStyleDemo from './components/InlineStyleDemo'
+import LiveStyleEditor from './components/LiveStyleEditor'
 
-//import './theme/theme.css'
-
+import './theme/theme.css'
+import StyledComponentsDemo from './components/StyledComponentsDemo'
+import ThemePanel from './components/ThemePanel'
+import { ThemeProvider } from './theme/ThemeContext'
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.      │
 // │  1  CssGlobalDemo        — clases globales y riesgo de colisión     │
@@ -16,24 +21,26 @@ import CssModuleDemo from './components/CssModuleDemo'
 // │  6  HoverDemo            — hook useHover para efectos hover         │
 // │  7  ThemePanel           — Context + CSS variables para theming     │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 3
+const PASO = 7
 
 export default function App() {
   const content =
-    PASO === 1 ? <CssGlobalDemo /> :/*
-    PASO === 2 ? <InlineStyleDemo /> :*/
-    PASO === 3 ? <CssModuleDemo /> :/*
-    PASO === 4 ? <StyledComponentsDemo /> :
-    PASO === 5 ? <LiveStyleEditor /> :
-    PASO === 6 ? <HoverDemo /> :
-    PASO === 7 ? <ThemePanel /> :*/
-    <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
+    PASO === 1 ? <CssGlobalDemo /> :
+      PASO === 2 ? <InlineStyleDemo /> :
+        PASO === 3 ? <CssModuleDemo /> :
+          PASO === 4 ? <StyledComponentsDemo /> :
+            PASO === 5 ? <LiveStyleEditor /> :
+              PASO === 6 ? <HoverDemo /> :
+                PASO === 7 ? <ThemePanel /> :
+                  <p style={{ color: '#e00' }}>Paso {PASO}: crea el componente primero</p>
 
   return (
-    
+
+    <ThemeProvider>
       <main style={{ maxWidth: 640, margin: '0 auto', padding: '32px 16px' }}>
         {content}
       </main>
-    
+    </ThemeProvider>
+
   )
 }
